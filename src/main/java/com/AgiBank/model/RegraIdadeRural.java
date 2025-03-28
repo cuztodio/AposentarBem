@@ -1,4 +1,4 @@
-﻿package com.AgiBank.model;
+package com.AgiBank.model;
 
 import java.util.List;
 
@@ -14,6 +14,7 @@ public class RegraIdadeRural extends RegrasAposentadoria {
     @Override
     public double calcularCoeficienteAposentadoria() {
         int idadeMinima = getGenero() == Genero.MASCULINO ? IDADE_MINIMA_RURAL_MASCULINO : IDADE_MINIMA_RURAL_FEMININO;
+
 
         if (getIdade() < idadeMinima) {
             throw new IllegalArgumentException("Idade abaixo da mínima para aposentadoria rural.");

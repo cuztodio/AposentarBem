@@ -10,15 +10,15 @@ public class Usuario {
     private String nome;
     private LocalDate dataNascimento;
     private int idade;
-    private String genero;
-    private String profissao;
+    private RegrasAposentadoria.Genero genero;
+    private RegrasAposentadoria.Profissao profissao;
     private int idadeAposentadoriaDesejada;
 
     public Usuario(String nome, String dataNascimento, String genero, String profissao, int idadeAposentadoriaDesejada) {
         this.nome = nome;
         setDataNascimento(dataNascimento);
-        this.genero = genero;
-        this.profissao = profissao;
+        this.genero = RegrasAposentadoria.Genero.valueOf(genero);
+        this.profissao = RegrasAposentadoria.Profissao.valueOf(profissao);
         this.idadeAposentadoriaDesejada = idadeAposentadoriaDesejada;
     }
 
@@ -66,19 +66,19 @@ public class Usuario {
         return Period.between(dataNascimento, dataAtual).getYears();
     }
 
-    public String getGenero() {
+    public RegrasAposentadoria.Genero getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero) {
+    public void setGenero(RegrasAposentadoria.Genero genero) {
         this.genero = genero;
     }
 
-    public String getProfissao() {
+    public RegrasAposentadoria.Profissao getProfissao() {
         return profissao;
     }
 
-    public void setProfissao(String profissao) {
+    public void setProfissao(RegrasAposentadoria.Profissao profissao) {
         this.profissao = profissao;
     }
 
